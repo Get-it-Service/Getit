@@ -1,0 +1,751 @@
+package org.apache.jsp;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+import java.sql.*;
+
+public final class tutor_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List<String> _jspx_dependants;
+
+  private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
+
+  public java.util.List<String> getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+    try {
+      response.setContentType("text/html;charset=UTF-8");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+      _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
+
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("         <meta charset=\"utf-8\">\n");
+      out.write("  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n");
+      out.write("  <meta name=\"description\" content=\"\">\n");
+      out.write("  <meta name=\"author\" content=\"\">\n");
+      out.write("\n");
+      out.write("  <title>GET!T - Tutor Services</title>\n");
+      out.write("\n");
+      out.write("  <!-- Bootstrap core CSS -->\n");
+      out.write("  <link href=\"vendor/bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">\n");
+      out.write("\n");
+      out.write("  <!-- Custom fonts for this template -->\n");
+      out.write("  <link href=\"vendor/fontawesome-free/css/all.min.css\" rel=\"stylesheet\" type=\"text/css\">\n");
+      out.write("  <link href=\"https://fonts.googleapis.com/css?family=Montserrat:400,700\" rel=\"stylesheet\" type=\"text/css\">\n");
+      out.write("  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>\n");
+      out.write("  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>\n");
+      out.write("  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>\n");
+      out.write("\n");
+      out.write("  <!-- Custom styles for this template -->\n");
+      out.write("  <link href=\"css/agency.min2.css\" rel=\"stylesheet\">\n");
+      out.write("    </head>\n");
+      out.write("    <body id=\"page-top\">\n");
+      out.write("\n");
+      out.write("  <!-- Navigation -->\n");
+      out.write("  <nav class=\"navbar navbar-expand-lg navbar-dark fixed-top\" id=\"mainNav\">\n");
+      out.write("    <div class=\"container\">\n");
+      out.write("      <a class=\"navbar-brand js-scroll-trigger\" href=\"index.jsp\">GET!T - Tutor</a>\n");
+      out.write("      <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\"  aria-label=\"Toggle navigation\">\n");
+      out.write("        Menu\n");
+      out.write("        <i class=\"fas fa-bars\"></i>\n");
+      out.write("      </button>\n");
+      out.write("      <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">\n");
+      out.write("        <ul class=\"navbar-nav text-uppercase ml-auto\">\n");
+      out.write("          <li class=\"nav-item\">\n");
+      out.write("            <a class=\"nav-link js-scroll-trigger\" href=\"#services\">Services</a>\n");
+      out.write("          </li>\n");
+      out.write("          <li class=\"nav-item\">\n");
+      out.write("            <a class=\"nav-link js-scroll-trigger\" href=\"#portfolio\">Methodology</a>\n");
+      out.write("          </li>\n");
+      out.write("          <li class=\"nav-item\">\n");
+      out.write("              <a class=\"nav-link js-scroll-trigger\" button class=\"btn btn-primary btn-lg\" data-toggle=\"modal\"  data-target=\"#myModal\">Register</button></a>\n");
+      out.write("          </li>\n");
+      out.write("\n");
+      out.write("          <li class=\"nav-item\">\n");
+      out.write("            <a class=\"nav-link js-scroll-trigger\" href=\"#contact\">Contact</a>\n");
+      out.write("          </li>\n");
+      out.write("          <li class=\"nav-item\">\n");
+      out.write("              ");
+String name=(String)session.getAttribute("username");
+                    if(name!=null)
+
+                                            { 
+                                        
+                                              out.println("<a class='nav-link js-scroll-trigger' href='tutor.jsp'>Log out</a>");
+                                    
+                                    name=null;
+                                            }
+                    else{
+                        
+                        
+                           out.println("<a class='nav-link js-scroll-trigger' button class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModal1'>Log in</button></a>"); 
+                    }
+                
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("          </li>\n");
+      out.write("        </ul>\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("  </nav>\n");
+      out.write(" <div class=\"modal fade\" id=\"myModal1\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n");
+      out.write("  <div class=\"modal-dialog\">\n");
+      out.write("    <div class=\"modal-content\">\n");
+      out.write("      <div class=\"modal-header\"style=\"background-color: #fec503\";>\n");
+      out.write("        <h5 class=\"modal-title\" id=\"myModalLabel\" text-center >Log in</h5>\n");
+      out.write("      </div>\n");
+      out.write("      <div class=\"modal-body\">\n");
+      out.write("        \n");
+      out.write("       \n");
+      out.write("        <form class=\"form-horizontal\" role=\"form\">\n");
+      out.write("  <div class=\"form-group\">\n");
+      out.write("    <label for=\"inputEmail3\" class=\"col-sm-2 control-label\">User ID</label>\n");
+      out.write("    <div class=\"col-sm-10\">\n");
+      out.write("      <input type=\"text\" class=\"form-control\" id=\"inputEmail3\" name=\"t1\" placeholder=\"user id\">\n");
+      out.write("    </div>\n");
+      out.write("  </div>\n");
+      out.write("  <div class=\"form-group\">\n");
+      out.write("    <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">Password</label>\n");
+      out.write("    <div class=\"col-sm-10\">\n");
+      out.write("      <input type=\"password\" class=\"form-control\" id=\"inputPassword3\" name=\"t2\" placeholder=\"Password\">\n");
+      out.write("    </div>\n");
+      out.write("  </div>\n");
+      out.write("  <div class=\"form-group\">\n");
+      out.write("    <div class=\"col-sm-offset-2 col-sm-10\">\n");
+      out.write("      <div class=\"checkbox\">\n");
+      out.write("        <label>\n");
+      out.write("          <input type=\"checkbox\"> Remember me\n");
+      out.write("        </label>\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("  </div>\n");
+      out.write("        <br><h4>              Not registered yet?\n");
+      out.write("            <u style=\"color:#fec503\"><a href=\"registration.jsp\" >Register now!</a></u></h4><br><p>It is easy and done in 1 minute and gives you access to special discounts and more!!!<p>\n");
+      out.write("\n");
+      out.write("  <div class=\"form-group\">\n");
+      out.write("    <div class=\"col-sm-offset-2 col-sm-10\">\n");
+      out.write("       <div class=\"modal-footer\">\n");
+      out.write("        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n");
+      out.write("        <button type=\"submit\" class=\"btn btn-primary\" name=\"b1\">Log in</button>\n");
+      out.write("        ");
+
+                        if(request.getParameter("b1")!=null)
+                        {
+                            String id=request.getParameter("t1");
+                            String pw=request.getParameter("t2");
+                            Connection con=null;
+                            Statement st;
+                            try{
+		Class.forName("com.mysql.jdbc.Driver");	
+		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mnnit","root","");
+		st=con.createStatement();
+		String sql="select * from getit where id='"+id+"' and pwd='"+pw+"'";
+		ResultSet rs=st.executeQuery(sql);
+		if(rs.next())
+		{
+                                                    session.setAttribute("username", rs.getString(1));
+                                              session.setAttribute("usraddress", rs.getString(4));
+
+                        session.setAttribute("usrid", request.getParameter("t1"));
+
+			response.sendRedirect("tutor.jsp");
+
+		}
+
+		else
+
+		{
+                        out.println("invalid username or password");
+                        response.sendRedirect("tutor.jsp");
+			
+
+		}
+		
+	
+             }
+catch(Exception e)
+
+	{
+
+		out.println(e.toString());
+
+	}
+
+
+
+        }
+
+      out.write("\n");
+      out.write("\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("  </div>\n");
+      out.write("</form>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("      </div>\n");
+      out.write("      \n");
+      out.write("    </div>\n");
+      out.write("  </div>\n");
+      out.write("</div>\n");
+      out.write("  \n");
+      out.write("  \n");
+      out.write("  \n");
+      out.write("   <div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n");
+      out.write("  <div class=\"modal-dialog\">\n");
+      out.write("    <div class=\"modal-content\">\n");
+      out.write("      <div class=\"modal-header\"style=\"background-color: #fec503\";>\n");
+      out.write("        <h5 class=\"modal-title\" id=\"myModalLabel\" text-center >Log in</h5>\n");
+      out.write("      </div>\n");
+      out.write("      <div class=\"modal-body\">\n");
+      out.write("        \n");
+      out.write("       \n");
+      out.write("        <form class=\"form-horizontal\" role=\"form\">\n");
+      out.write("  <div class=\"form-group\">\n");
+      out.write("    <label for=\"inputEmail3\" class=\"col-sm-2 control-label\">Modes</label>\n");
+      out.write("    <select class=\"form-control\">\n");
+      out.write("        <option>Online</option>\n");
+      out.write("        <option>Offline</option>\n");
+      out.write("    </select>\n");
+      out.write("  </div>\n");
+      out.write("  <div class=\"form-group\">\n");
+      out.write("    <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">Classes</label>\n");
+      out.write("    <select class=\"form-control\">\n");
+      out.write("        \n");
+      out.write("        <option>IX</option>\n");
+      out.write("        <option>X</option>\n");
+      out.write("        <option>XI</option>\n");
+      out.write("        <option>XII</option>\n");
+      out.write("    </select>\n");
+      out.write("  </div>\n");
+      out.write("  <div class=\"form-group\">\n");
+      out.write("    <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">Subjects</label>\n");
+      out.write("    <select class=\"form-control\">\n");
+      out.write("        \n");
+      out.write("        <option>Maths</option>\n");
+      out.write("        <option>Physics</option>\n");
+      out.write("        <option>Chemistry</option>\n");
+      out.write("        <option>Biology</option>\n");
+      out.write("    </select>\n");
+      out.write("  </div>\n");
+      out.write("        <br><h4>              Not registered yet?\n");
+      out.write("            <u style=\"color:#fec503\"><a href=\"registration.jsp\" >Register now!</a></u></h4><br><p>It is easy and done in 1 minute and gives you access to special discounts and more!!!<p>\n");
+      out.write("\n");
+      out.write("  <div class=\"form-group\">\n");
+      out.write("    <div class=\"col-sm-offset-2 col-sm-10\">\n");
+      out.write("       <div class=\"modal-footer\">\n");
+      out.write("        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n");
+      out.write("        <button type=\"submit\" class=\"btn btn-primary\" name=\"b1\">Log in</button>\n");
+      out.write("  </div></div></div></form>\n");
+      out.write("  </div></div>\n");
+      out.write("</div></div>\n");
+      out.write("\n");
+      out.write("  \n");
+      out.write("  <!-- Header -->\n");
+      out.write("  <header class=\"masthead\" style=\"background-image:url(img/6_IMAGE.jpg);\">\n");
+      out.write("\n");
+      out.write("    <div class=\"container\">\n");
+      out.write("      <div class=\"intro-text\">\n");
+      out.write("        <div class=\"intro-lead-in\" ><h1 style=\"margin-left: '50px';color:#fec503;font-family:'Kaushan Script'\">Welcome To Get!T\n");
+      out.write("        \n");
+      out.write("        \n");
+      out.write("        ");
+
+                    if(session.getAttribute("username")!=null){
+ name=(String)session.getAttribute("username");
+                                            
+                                    out.println(" "+name);
+                                            }
+                                            
+        
+      out.write("</h1>\n");
+      out.write("        \n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"intro-heading text-uppercase\" style=\"color: #212528;\">A learning curve is essential to Growth.....</div>\n");
+      out.write("        <a class=\"btn btn-primary btn-xl text-uppercase js-scroll-trigger\" href=\"#services\" style=\"border-style: none;outline: none;\">Tell us more</a>\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("  </header>\n");
+      out.write("\n");
+      out.write("  <!-- Services -->\n");
+      out.write("  <section class=\"page-section\" id=\"services\">\n");
+      out.write("    <div class=\"container\">\n");
+      out.write("      <div class=\"row\">\n");
+      out.write("        <div class=\"col-lg-12 text-center\">\n");
+      out.write("          <h2 class=\"section-heading text-uppercase\">Services</h2>\n");
+      out.write("          <h3 class=\"section-subheading text-muted\">We are offering both online and offline modes of LEARNING</h3>\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("      <div class=\"row text-center\">\n");
+      out.write("        <div class=\"col-md-4\">\n");
+      out.write("          <span class=\"fa-stack fa-4x\">\n");
+      out.write("            <i class=\"fas fa-circle fa-stack-2x text-primary\"></i>\n");
+      out.write("            <i class=\"fas fa-shopping-cart fa-stack-1x fa-inverse\"></i>\n");
+      out.write("          </span>\n");
+      out.write("          <h4 class=\"service-heading\">TEACHERS</h4>\n");
+      out.write("          <p class=\"text-muted\">We have experienced and well trained teachers</p>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"col-md-4\">\n");
+      out.write("          <span class=\"fa-stack fa-4x\">\n");
+      out.write("            <i class=\"fas fa-circle fa-stack-2x text-primary\"></i>\n");
+      out.write("            <i class=\"fas fa-laptop fa-stack-1x fa-inverse\"></i>\n");
+      out.write("          </span>\n");
+      out.write("          <h4 class=\"service-heading\">CLASSES</h4>\n");
+      out.write("          <p class=\"text-muted\">Teachers are available for classes 9th to 12th</p>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"col-md-4\">\n");
+      out.write("          <span class=\"fa-stack fa-4x\">\n");
+      out.write("            <i class=\"fas fa-circle fa-stack-2x text-primary\"></i>\n");
+      out.write("            <i class=\"fas fa-lock fa-stack-1x fa-inverse\"></i>\n");
+      out.write("          </span>\n");
+      out.write("          <h4 class=\"service-heading\">SUBJECTS</h4>\n");
+      out.write("          <p class=\"text-muted\">MATHS ,PHYSICS ,CHEMISTRY ,BIOLOGY</p>\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("  </section>\n");
+      out.write("\n");
+      out.write("  <!-- Portfolio Grid -->\n");
+      out.write("  <section class=\"bg-light page-section\" id=\"portfolio\">\n");
+      out.write("    <div class=\"container\">\n");
+      out.write("      <div class=\"row\">\n");
+      out.write("        <div class=\"col-lg-12 text-center\">\n");
+      out.write("          <h2 class=\"section-heading text-uppercase\">TEACHING METHODS</h2>\n");
+      out.write("          <h3 class=\"section-subheading text-muted\">If  a child can't learn the way we teach,maybe we should teach the way they learn..... </h3>\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("      <div class=\"row\">\n");
+      out.write("        <div class=\"col-md-4 col-sm-6 portfolio-item\">\n");
+      out.write("          <a class=\"portfolio-link\" data-toggle=\"modal\" href=\"#portfolioModal1\">\n");
+      out.write("            <div class=\"portfolio-hover\">\n");
+      out.write("              <div class=\"portfolio-hover-content\">\n");
+      out.write("                <i class=\"fas fa-plus fa-3x\"></i>\n");
+      out.write("              </div>\n");
+      out.write("            </div>\n");
+      out.write("            <img class=\"img-fluid\" src=\"img/1_IMAGE.jpg\" alt=\"\">\n");
+      out.write("          </a>\n");
+      out.write("          <div class=\"portfolio-caption\">\n");
+      out.write("            <h4>Concept Clearance</h4>\n");
+      out.write("            <p class=\"text-muted\">The teacher's start teaching from the root level.... </p>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"col-md-4 col-sm-6 portfolio-item\">\n");
+      out.write("          <a class=\"portfolio-link\" data-toggle=\"modal\" href=\"#portfolioModal2\">\n");
+      out.write("            <div class=\"portfolio-hover\">\n");
+      out.write("              <div class=\"portfolio-hover-content\">\n");
+      out.write("                <i class=\"fas fa-plus fa-3x\"></i>\n");
+      out.write("              </div>\n");
+      out.write("            </div>\n");
+      out.write("            <img class=\"img-fluid\" src=\"img/3_IMAGE.jpg\" alt=\"\">\n");
+      out.write("          </a>\n");
+      out.write("          <div class=\"portfolio-caption\">\n");
+      out.write("            <h4>Regular Practice</h4>\n");
+      out.write("            <p class=\"text-muted\">Practice makes us perfect is what we follow while teaching.....</p>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"col-md-4 col-sm-6 portfolio-item\">\n");
+      out.write("          <a class=\"portfolio-link\" data-toggle=\"modal\" href=\"#portfolioModal3\">\n");
+      out.write("            <div class=\"portfolio-hover\">\n");
+      out.write("              <div class=\"portfolio-hover-content\">\n");
+      out.write("                <i class=\"fas fa-plus fa-3x\"></i>\n");
+      out.write("              </div>\n");
+      out.write("            </div>\n");
+      out.write("            <img class=\"img-fluid\" src=\"img/1_IMAGE.jpg\" alt=\"\">\n");
+      out.write("          </a>\n");
+      out.write("          <div class=\"portfolio-caption\">\n");
+      out.write("            <h4>Mock Test</h4>\n");
+      out.write("            <p class=\"text-muted\">Regular testing......</p>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"col-md-4 col-sm-6 portfolio-item\">\n");
+      out.write("          <a class=\"portfolio-link\" data-toggle=\"modal\" href=\"#portfolioModal4\">\n");
+      out.write("            <div class=\"portfolio-hover\">\n");
+      out.write("              <div class=\"portfolio-hover-content\">\n");
+      out.write("                <i class=\"fas fa-plus fa-3x\"></i>\n");
+      out.write("              </div>\n");
+      out.write("            </div>\n");
+      out.write("            \n");
+      out.write("  </section>\n");
+      out.write("\n");
+      out.write(" \n");
+      out.write("\n");
+      out.write("  <!-- Clients -->\n");
+      out.write("  <section class=\"py-5\">\n");
+      out.write("    <div class=\"container\">\n");
+      out.write("      <div class=\"row\">\n");
+      out.write("        <div class=\"col-md-3 col-sm-6\">\n");
+      out.write("          <a href=\"#\">\n");
+      out.write("            <img class=\"img-fluid d-block mx-auto\" src=\"img/logos/envato.jpg\" alt=\"\">\n");
+      out.write("          </a>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"col-md-3 col-sm-6\">\n");
+      out.write("          <a href=\"#\">\n");
+      out.write("            <img class=\"img-fluid d-block mx-auto\" src=\"img/logos/designmodo.jpg\" alt=\"\">\n");
+      out.write("          </a>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"col-md-3 col-sm-6\">\n");
+      out.write("          <a href=\"#\">\n");
+      out.write("            <img class=\"img-fluid d-block mx-auto\" src=\"img/logos/themeforest.jpg\" alt=\"\">\n");
+      out.write("          </a>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"col-md-3 col-sm-6\">\n");
+      out.write("          <a href=\"#\">\n");
+      out.write("            <img class=\"img-fluid d-block mx-auto\" src=\"img/logos/creative-market.jpg\" alt=\"\">\n");
+      out.write("          </a>\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("  </section>\n");
+      out.write("\n");
+      out.write("  <!-- Contact -->\n");
+      out.write("  <section class=\"page-section\" id=\"contact\">\n");
+      out.write("    <div class=\"container\">\n");
+      out.write("      <div class=\"row\">\n");
+      out.write("        <div class=\"col-lg-12 text-center\">\n");
+      out.write("          <h2 class=\"section-heading text-uppercase\">Contact Us</h2>\n");
+      out.write("          <h3 class=\"section-subheading text-muted\"></h3>\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("      <div class=\"row\">\n");
+      out.write("        <div class=\"col-lg-12\">\n");
+      out.write("          <form id=\"contactForm\" name=\"sentMessage\" novalidate=\"novalidate\">\n");
+      out.write("            <div class=\"row\">\n");
+      out.write("              <div class=\"col-md-6\">\n");
+      out.write("                <div class=\"form-group\">\n");
+      out.write("                  <input class=\"form-control\" id=\"name\" type=\"text\" placeholder=\"Your Name *\" required=\"required\" data-validation-required-message=\"Please enter your name.\">\n");
+      out.write("                  <p class=\"help-block text-danger\"></p>\n");
+      out.write("                </div>\n");
+      out.write("                <div class=\"form-group\">\n");
+      out.write("                  <input class=\"form-control\" id=\"email\" type=\"email\" placeholder=\"Your Email *\" required=\"required\" data-validation-required-message=\"Please enter your email address.\">\n");
+      out.write("                  <p class=\"help-block text-danger\"></p>\n");
+      out.write("                </div>\n");
+      out.write("                <div class=\"form-group\">\n");
+      out.write("                  <input class=\"form-control\" id=\"phone\" type=\"tel\" placeholder=\"Your Phone *\" required=\"required\" data-validation-required-message=\"Please enter your phone number.\">\n");
+      out.write("                  <p class=\"help-block text-danger\"></p>\n");
+      out.write("                </div>\n");
+      out.write("              </div>\n");
+      out.write("              <div class=\"col-md-6\">\n");
+      out.write("                <div class=\"form-group\">\n");
+      out.write("                  <textarea class=\"form-control\" id=\"message\" placeholder=\"Your Message *\" required=\"required\" data-validation-required-message=\"Please enter a message.\"></textarea>\n");
+      out.write("                  <p class=\"help-block text-danger\"></p>\n");
+      out.write("                </div>\n");
+      out.write("              </div>\n");
+      out.write("              <div class=\"clearfix\"></div>\n");
+      out.write("              <div class=\"col-lg-12 text-center\">\n");
+      out.write("                <div id=\"success\"></div>\n");
+      out.write("                <button id=\"sendMessageButton\" class=\"btn btn-primary btn-xl text-uppercase\" type=\"submit\">Send Message</button>\n");
+      out.write("              </div>\n");
+      out.write("            </div>\n");
+      out.write("          </form>\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("  </section>\n");
+      out.write("\n");
+      out.write("  <!-- Footer -->\n");
+      out.write("  <footer class=\"footer\">\n");
+      out.write("    <div class=\"container\">\n");
+      out.write("      <div class=\"row align-items-center\" style=\"text-align: center;\">\n");
+      out.write("        <div class=\"col-md-4\">\n");
+      out.write("          <span class=\"copyright\">Copyright  2019-  GETIT</span>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"col-md-4\">\n");
+      out.write("          <ul class=\"list-inline social-buttons\">\n");
+      out.write("            <li class=\"list-inline-item\">\n");
+      out.write("              <a href=\"#\">\n");
+      out.write("                <i class=\"fab fa-twitter\"></i>\n");
+      out.write("              </a>\n");
+      out.write("            </li>\n");
+      out.write("            <li class=\"list-inline-item\">\n");
+      out.write("              <a href=\"#\">\n");
+      out.write("                <i class=\"fab fa-facebook-f\"></i>\n");
+      out.write("              </a>\n");
+      out.write("            </li>\n");
+      out.write("            <li class=\"list-inline-item\">\n");
+      out.write("              <a href=\"#\">\n");
+      out.write("                <i class=\"fab fa-linkedin-in\"></i>\n");
+      out.write("              </a>\n");
+      out.write("            </li>\n");
+      out.write("          </ul>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"col-md-4\">\n");
+      out.write("          <ul class=\"list-inline quicklinks\">\n");
+      out.write("            <li class=\"list-inline-item\">\n");
+      out.write("              <a href=\"#\">Privacy Policy</a>\n");
+      out.write("            </li>\n");
+      out.write("            <li class=\"list-inline-item\">\n");
+      out.write("              <a href=\"#\">Terms of Use</a>\n");
+      out.write("            </li>\n");
+      out.write("          </ul>\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("  </footer>\n");
+      out.write("\n");
+      out.write("  <!-- Portfolio Modals -->\n");
+      out.write("\n");
+      out.write("  <!-- Modal 1 -->\n");
+      out.write("  <div class=\"portfolio-modal modal fade\" id=\"portfolioModal1\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n");
+      out.write("    <div class=\"modal-dialog\">\n");
+      out.write("      <div class=\"modal-content\">\n");
+      out.write("        <div class=\"close-modal\" data-dismiss=\"modal\">\n");
+      out.write("          <div class=\"lr\">\n");
+      out.write("            <div class=\"rl\"></div>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"container\">\n");
+      out.write("          <div class=\"row\">\n");
+      out.write("            <div class=\"col-lg-8 mx-auto\">\n");
+      out.write("              <div class=\"modal-body\">\n");
+      out.write("                <!-- Project Details Go Here -->\n");
+      out.write("                <h2 class=\"text-uppercase\">Project Name</h2>\n");
+      out.write("                <p class=\"item-intro text-muted\">Lorem ipsum dolor sit amet consectetur.</p>\n");
+      out.write("                <img class=\"img-fluid d-block mx-auto\" src=\"img/portfolio/01-full.jpg\" alt=\"\">\n");
+      out.write("                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>\n");
+      out.write("                <ul class=\"list-inline\">\n");
+      out.write("                  <li>Date: January 2017</li>\n");
+      out.write("                  <li>Client: Threads</li>\n");
+      out.write("                  <li>Category: Illustration</li>\n");
+      out.write("                </ul>\n");
+      out.write("                <button class=\"btn btn-primary\" data-dismiss=\"modal\" type=\"button\">\n");
+      out.write("                  <i class=\"fas fa-times\"></i>\n");
+      out.write("                  Close Project</button>\n");
+      out.write("              </div>\n");
+      out.write("            </div>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("  </div>\n");
+      out.write("\n");
+      out.write("  <!-- Modal 2 -->\n");
+      out.write("  <div class=\"portfolio-modal modal fade\" id=\"portfolioModal2\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n");
+      out.write("    <div class=\"modal-dialog\">\n");
+      out.write("      <div class=\"modal-content\">\n");
+      out.write("        <div class=\"close-modal\" data-dismiss=\"modal\">\n");
+      out.write("          <div class=\"lr\">\n");
+      out.write("            <div class=\"rl\"></div>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"container\">\n");
+      out.write("          <div class=\"row\">\n");
+      out.write("            <div class=\"col-lg-8 mx-auto\">\n");
+      out.write("              <div class=\"modal-body\">\n");
+      out.write("                <!-- Project Details Go Here -->\n");
+      out.write("                <h2 class=\"text-uppercase\">Project Name</h2>\n");
+      out.write("                <p class=\"item-intro text-muted\">Lorem ipsum dolor sit amet consectetur.</p>\n");
+      out.write("                <img class=\"img-fluid d-block mx-auto\" src=\"img/portfolio/02-full.jpg\" alt=\"\">\n");
+      out.write("                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>\n");
+      out.write("                <ul class=\"list-inline\">\n");
+      out.write("                  <li>Date: January 2017</li>\n");
+      out.write("                  <li>Client: Explore</li>\n");
+      out.write("                  <li>Category: Graphic Design</li>\n");
+      out.write("                </ul>\n");
+      out.write("                <button class=\"btn btn-primary\" data-dismiss=\"modal\" type=\"button\">\n");
+      out.write("                  <i class=\"fas fa-times\"></i>\n");
+      out.write("                  Close Project</button>\n");
+      out.write("              </div>\n");
+      out.write("            </div>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("  </div>\n");
+      out.write("\n");
+      out.write("  <!-- Modal 3 -->\n");
+      out.write("  <div class=\"portfolio-modal modal fade\" id=\"portfolioModal3\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n");
+      out.write("    <div class=\"modal-dialog\">\n");
+      out.write("      <div class=\"modal-content\">\n");
+      out.write("        <div class=\"close-modal\" data-dismiss=\"modal\">\n");
+      out.write("          <div class=\"lr\">\n");
+      out.write("            <div class=\"rl\"></div>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"container\">\n");
+      out.write("          <div class=\"row\">\n");
+      out.write("            <div class=\"col-lg-8 mx-auto\">\n");
+      out.write("              <div class=\"modal-body\">\n");
+      out.write("                <!-- Project Details Go Here -->\n");
+      out.write("                <h2 class=\"text-uppercase\">Project Name</h2>\n");
+      out.write("                <p class=\"item-intro text-muted\">Lorem ipsum dolor sit amet consectetur.</p>\n");
+      out.write("                <img class=\"img-fluid d-block mx-auto\" src=\"img/portfolio/03-full.jpg\" alt=\"\">\n");
+      out.write("                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>\n");
+      out.write("                <ul class=\"list-inline\">\n");
+      out.write("                  <li>Date: January 2017</li>\n");
+      out.write("                  <li>Client: Finish</li>\n");
+      out.write("                  <li>Category: Identity</li>\n");
+      out.write("                </ul>\n");
+      out.write("                <button class=\"btn btn-primary\" data-dismiss=\"modal\" type=\"button\">\n");
+      out.write("                  <i class=\"fas fa-times\"></i>\n");
+      out.write("                  Close Project</button>\n");
+      out.write("              </div>\n");
+      out.write("            </div>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("  </div>\n");
+      out.write("\n");
+      out.write("  <!-- Modal 4 -->\n");
+      out.write("  <div class=\"portfolio-modal modal fade\" id=\"portfolioModal4\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n");
+      out.write("    <div class=\"modal-dialog\">\n");
+      out.write("      <div class=\"modal-content\">\n");
+      out.write("        <div class=\"close-modal\" data-dismiss=\"modal\">\n");
+      out.write("          <div class=\"lr\">\n");
+      out.write("            <div class=\"rl\"></div>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"container\">\n");
+      out.write("          <div class=\"row\">\n");
+      out.write("            <div class=\"col-lg-8 mx-auto\">\n");
+      out.write("              <div class=\"modal-body\">\n");
+      out.write("                <!-- Project Details Go Here -->\n");
+      out.write("                <h2 class=\"text-uppercase\">Project Name</h2>\n");
+      out.write("                <p class=\"item-intro text-muted\">Lorem ipsum dolor sit amet consectetur.</p>\n");
+      out.write("                <img class=\"img-fluid d-block mx-auto\" src=\"img/portfolio/04-full.jpg\" alt=\"\">\n");
+      out.write("                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>\n");
+      out.write("                <ul class=\"list-inline\">\n");
+      out.write("                  <li>Date: January 2017</li>\n");
+      out.write("                  <li>Client: Lines</li>\n");
+      out.write("                  <li>Category: Branding</li>\n");
+      out.write("                </ul>\n");
+      out.write("                <button class=\"btn btn-primary\" data-dismiss=\"modal\" type=\"button\">\n");
+      out.write("                  <i class=\"fas fa-times\"></i>\n");
+      out.write("                  Close Project</button>\n");
+      out.write("              </div>\n");
+      out.write("            </div>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("  </div>\n");
+      out.write("\n");
+      out.write("  <!-- Modal 5 -->\n");
+      out.write("  <div class=\"portfolio-modal modal fade\" id=\"portfolioModal5\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n");
+      out.write("    <div class=\"modal-dialog\">\n");
+      out.write("      <div class=\"modal-content\">\n");
+      out.write("        <div class=\"close-modal\" data-dismiss=\"modal\">\n");
+      out.write("          <div class=\"lr\">\n");
+      out.write("            <div class=\"rl\"></div>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"container\">\n");
+      out.write("          <div class=\"row\">\n");
+      out.write("            <div class=\"col-lg-8 mx-auto\">\n");
+      out.write("              <div class=\"modal-body\">\n");
+      out.write("                <!-- Project Details Go Here -->\n");
+      out.write("                <h2 class=\"text-uppercase\">Project Name</h2>\n");
+      out.write("                <p class=\"item-intro text-muted\">Lorem ipsum dolor sit amet consectetur.</p>\n");
+      out.write("                <img class=\"img-fluid d-block mx-auto\" src=\"img/portfolio/05-full.jpg\" alt=\"\">\n");
+      out.write("                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>\n");
+      out.write("                <ul class=\"list-inline\">\n");
+      out.write("                  <li>Date: January 2017</li>\n");
+      out.write("                  <li>Client: Southwest</li>\n");
+      out.write("                  <li>Category: Website Design</li>\n");
+      out.write("                </ul>\n");
+      out.write("                <button class=\"btn btn-primary\" data-dismiss=\"modal\" type=\"button\">\n");
+      out.write("                  <i class=\"fas fa-times\"></i>\n");
+      out.write("                  Close Project</button>\n");
+      out.write("              </div>\n");
+      out.write("            </div>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("  </div>\n");
+      out.write("\n");
+      out.write("  <!-- Modal 6 -->\n");
+      out.write("  <div class=\"portfolio-modal modal fade\" id=\"portfolioModal6\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n");
+      out.write("    <div class=\"modal-dialog\">\n");
+      out.write("      <div class=\"modal-content\">\n");
+      out.write("        <div class=\"close-modal\" data-dismiss=\"modal\">\n");
+      out.write("          <div class=\"lr\">\n");
+      out.write("            <div class=\"rl\"></div>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"container\">\n");
+      out.write("          <div class=\"row\">\n");
+      out.write("            <div class=\"col-lg-8 mx-auto\">\n");
+      out.write("              <div class=\"modal-body\">\n");
+      out.write("                <!-- Project Details Go Here -->\n");
+      out.write("                <h2 class=\"text-uppercase\">Project Name</h2>\n");
+      out.write("                <p class=\"item-intro text-muted\">Lorem ipsum dolor sit amet consectetur.</p>\n");
+      out.write("                <img class=\"img-fluid d-block mx-auto\" src=\"img/portfolio/06-full.jpg\" alt=\"\">\n");
+      out.write("                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>\n");
+      out.write("                <ul class=\"list-inline\">\n");
+      out.write("                  <li>Date: January 2017</li>\n");
+      out.write("                  <li>Client: Window</li>\n");
+      out.write("                  <li>Category: Photography</li>\n");
+      out.write("                </ul>\n");
+      out.write("                <button class=\"btn btn-primary\" data-dismiss=\"modal\" type=\"button\">\n");
+      out.write("                  <i class=\"fas fa-times\"></i>\n");
+      out.write("                  Close Project</button>\n");
+      out.write("              </div>\n");
+      out.write("            </div>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("  </div>\n");
+      out.write("\n");
+      out.write("  <!-- Bootstrap core JavaScript -->\n");
+      out.write("  <script src=\"vendor/jquery/jquery.min.js\"></script>\n");
+      out.write("  <script src=\"vendor/bootstrap/js/bootstrap.bundle.min.js\"></script>\n");
+      out.write("\n");
+      out.write("  <!-- Plugin JavaScript -->\n");
+      out.write("  <script src=\"vendor/jquery-easing/jquery.easing.min.js\"></script>\n");
+      out.write("\n");
+      out.write("  <!-- Contact form JavaScript -->\n");
+      out.write("  <script src=\"js/jqBootstrapValidation.js\"></script>\n");
+      out.write("  <script src=\"js/contact_me.js\"></script>\n");
+      out.write("\n");
+      out.write("  <!-- Custom scripts for this template -->\n");
+      out.write("  <script src=\"js/agency.min.js\"></script>\n");
+      out.write("\n");
+      out.write("    </body>\n");
+      out.write("</html>\n");
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          out.clearBuffer();
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}
